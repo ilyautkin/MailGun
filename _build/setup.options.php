@@ -23,6 +23,7 @@ if ($dialog) {
 
 	$email = 'Email';
 	$key = $ru ? 'Пароль' : 'Password';
+	$server = $ru ? 'Сервер' : 'Server';
 
 	$output =
 	'<style>
@@ -46,6 +47,10 @@ if ($dialog) {
 			<tr>
 				<td><label for="key">'.$key.'</label></td>
 				<td><input type="password" name="password" value="" placeholder="************" id="password" /></td>
+			</tr>
+			<tr>
+				<td><label for="server">'.$server.'</label></td>
+				<td><input type="text" name="server" value="smtp.eu.mailgun.org" placeholder="smtp.eu.mailgun.org" id="server" /></td>
 			</tr>
 		</table>
 	</div>
