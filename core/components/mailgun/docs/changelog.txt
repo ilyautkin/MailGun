@@ -1,5 +1,9 @@
 Changelog for MailGun.
 
+1.0.1-beta
+==============
+- Add server setting
+
 1.0.0-beta
 ==============
 - Initial release.
