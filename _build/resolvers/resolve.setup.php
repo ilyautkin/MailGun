@@ -12,7 +12,7 @@ if ($object->xpdo) {
             $tmp = array(
             	'mail_smtp_auth' => '1',
             	'mail_smtp_helo' => '',
-            	'mail_smtp_hosts' => 'smtp.mailgun.org',
+            	'mail_smtp_hosts' => $options['server'],
             	'mail_smtp_port' => '587',
             	'mail_smtp_prefix' => '',
             	'mail_smtp_single_to' => '1',
