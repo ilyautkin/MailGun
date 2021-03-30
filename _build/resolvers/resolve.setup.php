@@ -24,9 +24,11 @@ if ($object->xpdo) {
             
             foreach ($tmp as $k => $v) {
             	/* @var modSystemSetting $setting */
-            	$setting = $modx->getObject('modSystemSetting', array('key' => $k));
-            	$setting->set('value', $v);
-            	$setting->save();
+                if(!empty($v)) {
+                    $setting = $modx->getObject('modSystemSetting', ['key' => $k]);
+                    $setting->set('value', $v);
+                    $setting->save();
+                }
             }
             
             unset($tmp);

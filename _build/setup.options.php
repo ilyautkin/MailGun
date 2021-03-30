@@ -25,6 +25,10 @@ if ($dialog) {
 	$key = $ru ? 'Пароль' : 'Password';
 	$server = $ru ? 'Сервер' : 'Server';
 
+    $mail_smtp_user = $modx->getOption('mail_smtp_user');
+    $mail_smtp_pass = $modx->getOption('mail_smtp_pass');
+    $mail_smtp_hosts = $modx->getOption('mail_smtp_hosts') ?: 'smtp.eu.mailgun.org';
+
 	$output =
 	'<style>
 		#setup_form_wrapper {font: normal 12px Arial;line-height:18px;}
@@ -42,15 +46,15 @@ if ($dialog) {
 		<table cellspacing="5" id="setup_form">
 			<tr>
 				<td><label for="email">Email:</label></td>
-				<td><input type="email" name="email" value="" placeholder="postmaster@sandbox***.mailgun.org" id="email" /></td>
+				<td><input type="email" name="email" value="'.$mail_smtp_user.'" placeholder="postmaster@sandbox***.mailgun.org" id="email" /></td>
 			</tr>
 			<tr>
 				<td><label for="key">'.$key.'</label></td>
-				<td><input type="password" name="password" value="" placeholder="************" id="password" /></td>
+				<td><input type="password" name="password" value="'.$mail_smtp_pass.'" placeholder="************" id="password" /></td>
 			</tr>
 			<tr>
 				<td><label for="server">'.$server.'</label></td>
-				<td><input type="text" name="server" value="smtp.eu.mailgun.org" placeholder="smtp.eu.mailgun.org" id="server" /></td>
+				<td><input type="text" name="server" value="'.$mail_smtp_hosts.'" placeholder="smtp.eu.mailgun.org" id="server" /></td>
 			</tr>
 		</table>
 	</div>
